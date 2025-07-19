@@ -110,7 +110,6 @@ def brIGdgewindow():
     cmds.separator(style='none')
     control_data_frame(bwindow, main_layout)
     queries_arguements_frame(bwindow, main_layout)
-    color_settings_frame(bwindow, main_layout)
 
     #Shows window
     cmds.showWindow(bwindow)
@@ -153,12 +152,6 @@ def queries_arguements_frame(window, main_layout):
     OffsetGroupnum = cmds.intField('offsetgroupnum', m = True, w = 5, h = 20, min = 0)
     GimbalFix = cmds.checkBox ('gimbal', label = 'Rotation Order', v = False)
     FKIKSwitch = cmds.checkBox('fkikswitch', label = 'FK IK Switch', v = False)
-
-
-# Creates colors for controls
-def color_settings_frame(window, main_layout):
-    colorframe = cmds.frameLayout(label='Color Settings', width=500, height=90,
-                                 collapsable=True, parent=main_layout)
 
 
 def brigdge_collapse(window, frame_layout, height):
