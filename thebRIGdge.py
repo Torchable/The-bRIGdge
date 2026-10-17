@@ -10,7 +10,9 @@
 
 import maya.cmds as cmds
 import maya.mel as mm
+import importlib
 
+importlib.reload()
 
 #offset group attribute 
 def createoffset():
@@ -52,39 +54,34 @@ def CreateCircle():
     queries()
 
 #Creates Cube Control
-#MEL eval is used because I just find that easier to manage and add than making the controls in Python 
 def CreateCube():
-    cubecreate = mm.eval('curve -d 1 -p 0.5 0.5 -0.5 -p 0.5 0.5 0.5 -p -0.5 0.5 0.5 -p -0.5 0.5 -0.5 -p 0.5 0.5 -0.5 -p 0.5 -0.5 -0.5 -p -0.5 -0.5 -0.5 -p -0.5 0.5 -0.5' 
-                                '-p -0.5 0.5 0.5 -p -0.5 -0.5 0.5 -p -0.5 -0.5 -0.5 -p 0.5 -0.5 -0.5 -p 0.5 -0.5 0.5 -p -0.5 -0.5 0.5 -p -0.5 0.5 0.5 -p 0.5 0.5 0.5 -p 0.5 -0.5 0.5' 
-                                '-k 0 -k 1 -k 2 -k 3 -k 4 -k 5 -k 6 -k 7 -k 8 -k 9 -k 10 -k 11 -k 12 -k 13 -k 14 -k 15 -k 16 ;')
+    cubecreate = mm.eval('curve -d 1 -p 0.5 0.5 -0.5 -p 0.5 0.5 0.5 -p -0.5 0.5 0.5 -p -0.5 0.5 -0.5 -p 0.5 0.5 -0.5 -p 0.5 -0.5 -0.5 -p -0.5 -0.5 -0.5 -p -0.5 0.5 -0.5 -p -0.5 0.5 0.5 -p -0.5 -0.5 0.5 -p -0.5 -0.5 -0.5 -p 0.5 -0.5 -0.5 -p 0.5 -0.5 0.5 -p -0.5 -0.5 0.5 -p -0.5 0.5 0.5 -p 0.5 0.5 0.5 -p 0.5 -0.5 0.5 -k 0 -k 1 -k 2 -k 3 -k 4 -k 5 -k 6 -k 7 -k 8 -k 9 -k 10 -k 11 -k 12 -k 13 -k 14 -k 15 -k 16 ;')
     queries()
 
 #Creates Gear Control
 def CreateGear():
-    creategear = mm.eval('curve -d 1 -p -0.22961 0 0.92388 -p -0.206649 0 1.02388 -p -0.114805 0 1.12388 -p 0.114805 0 1.12388 -p 0.206649 0 1.02388 -p 0.22961 0 0.92388 
-                                '-p 0.490923 0 0.81564 -p 0.577869 0 0.870115 -p 0.713523 0 0.875882 -p 0.875882 0 0.713523 -p 0.870115 0 0.577869 -p 0.81564 0 0.490923 -p 0.92388 0 0.22961' 
-                                '-p 1.02388 0 0.206649 -p 1.12388 0 0.114805 -p 1.12388 0 -0.114805 -p 1.02388 0 -0.206649 -p 0.92388 0 -0.22961 -p 0.81564 0 -0.490923 -p 0.870115 0 -0.577869 -p 0.875882 0 -0.713523' 
-                                '-p 0.713523 0 -0.875882 -p 0.577869 0 -0.870115 -p 0.490923 0 -0.81564 -p 0.22961 0 -0.92388 -p 0.206649 0 -1.02388 -p 0.114805 0 -1.123879 -p -0.114805 0 -1.123879 -p -0.206649 0 -1.023879' 
-                                '-p -0.22961 0 -0.923879 -p -0.490923 0 -0.81564 -p -0.577869 0 -0.870115 -p -0.713524 0 -0.875882 -p -0.875882 0 -0.713523 -p -0.870115 0 -0.577869 -p -0.81564 0 -0.490923 -p -0.92388 0 -0.22961' 
-                                '-p -1.02388 0 -0.206649 -p -1.123879 0 -0.114805 -p -1.123879 0 0.114805 -p -1.023879 0 0.206649 -p -0.923879 0 0.22961 -p -0.81564 0 0.490923 -p -0.870115 0 0.57787 -p -0.875882 0 0.713524 -p -0.713523 0 0.875883' 
-                                '-p -0.577869 0 0.870115 -p -0.490923 0 0.81564 -p -0.22961 0 0.92388 -k 0 -k 1 -k 2 -k 3 -k 4 -k 5 -k 6 -k 7 -k 8 -k 9 -k 10 -k 11 -k 12 -k 13 -k 14 -k 15 -k 16 -k 17 -k 18 -k 19 -k 20 -k 21 -k 22 -k 23 -k 24 -k 25 -k 26' 
-                                '-k 27 -k 28 -k 29 -k 30 -k 31 -k 32 -k 33 -k 34 -k 35 -k 36 -k 37 -k 38 -k 39 -k 40 -k 41 -k 42 -k 43 -k 44 -k 45 -k 46 -k 47 -k 48 ;')
+    creategear = mm.eval('curve -d 1 -p -0.22961 0 0.92388 -p -0.206649 0 1.02388 -p -0.114805 0 1.12388 -p 0.114805 0 1.12388 -p 0.206649 0 1.02388 -p 0.22961 0 0.92388 -p 0.490923 0 0.81564 -p 0.577869 0 0.870115 -p 0.713523 0 0.875882 -p 0.875882 0 0.713523 -p 0.870115 0 0.577869 -p 0.81564 0 0.490923 -p 0.92388 0 0.22961 -p 1.02388 0 0.206649 -p 1.12388 0 0.114805 -p 1.12388 0 -0.114805 -p 1.02388 0 -0.206649 -p 0.92388 0 -0.22961 -p 0.81564 0 -0.490923 -p 0.870115 0 -0.577869 -p 0.875882 0 -0.713523 -p 0.713523 0 -0.875882 -p 0.577869 0 -0.870115 -p 0.490923 0 -0.81564 -p 0.22961 0 -0.92388 -p 0.206649 0 -1.02388 -p 0.114805 0 -1.123879 -p -0.114805 0 -1.123879 -p -0.206649 0 -1.023879 -p -0.22961 0 -0.923879 -p -0.490923 0 -0.81564 -p -0.577869 0 -0.870115 -p -0.713524 0 -0.875882 -p -0.875882 0 -0.713523 -p -0.870115 0 -0.577869 -p -0.81564 0 -0.490923 -p -0.92388 0 -0.22961 -p -1.02388 0 -0.206649 -p -1.123879 0 -0.114805 -p -1.123879 0 0.114805 -p -1.023879 0 0.206649 -p -0.923879 0 0.22961 -p -0.81564 0 0.490923 -p -0.870115 0 0.57787 -p -0.875882 0 0.713524 -p -0.713523 0 0.875883 -p -0.577869 0 0.870115 -p -0.490923 0 0.81564 -p -0.22961 0 0.92388 -k 0 -k 1 -k 2 -k 3 -k 4 -k 5 -k 6 -k 7 -k 8 -k 9 -k 10 -k 11 -k 12 -k 13 -k 14 -k 15 -k 16 -k 17 -k 18 -k 19 -k 20 -k 21 -k 22 -k 23 -k 24 -k 25 -k 26 -k 27 -k 28 -k 29 -k 30 -k 31 -k 32 -k 33 -k 34 -k 35 -k 36 -k 37 -k 38 -k 39 -k 40 -k 41 -k 42 -k 43 -k 44 -k 45 -k 46 -k 47 -k 48 ;')
     queries()
 
 #Creates Icosagon Control 
 def CreateIco():
-    createico = mm.eval('curve -d 1 -p -0.276393 0.850651 -0.447214 -p 0.276393 0.850651 0.447214 -p -0.723607 0.525731 0.447214 -p -0.276393 0.850651 -0.447214 -p -0.894427 -7.81933e-08 -0.447214' 
-                               '-p -0.723607 0.525731 0.447214 -p -0.723607 -0.525731 0.447214 -p -0.894427 -7.81933e-08 -0.447214 -p -0.276393 -0.850651 -0.447214 -p -0.723607 -0.525731 0.447214' 
-                               '-p -0.723607 0.525731 0.447214 -p 0 0 1 -p -0.723607 -0.525731 0.447214 -p 0.276393 -0.850651 0.447214 -p 0 0 1 -p 0.276393 0.850651 0.447214 -p -0.276393 0.850651 -0.447214' 
-                               '-p 0.723607 0.525731 -0.447214 -p 0.276393 0.850651 0.447214 -p 0.894427 0 0.447214 -p 0 0 1 -p 0.276393 -0.850651 0.447214 -p 0.723607 -0.525731 -0.447214 -p 0.894427 0 0.447214' 
-                               '-p 0.723607 0.525731 -0.447214 -p 0 0 -1 -p 0.723607 -0.525731 -0.447214 -p -0.276393 -0.850651 -0.447214 -p -0.894427 -7.81933e-08 -0.447214 -p 0 0 -1 -p -0.276393 0.850651 -0.447214 -p 0 0 -1' 
-                               '-p -0.276393 -0.850651 -0.447214 -p 0.723607 -0.525731 -0.447214 -p 0.276393 -0.850651 0.447214 -p 0.894427 0 0.447214 -p 0.276393 -0.850651 0.447214 -p -0.276393 -0.850651 -0.447214 -p 0.723607 -0.525731 -0.447214 -p 0.723607 0.525731 -0.447214' 
-                               '-k 0 -k 1 -k 2 -k 3 -k 4 -k 5 -k 6 -k 7 -k 8 -k 9 -k 10 -k 11 -k 12 -k 13 -k 14 -k 15 -k 16 -k 17 -k 18 -k 19 -k 20 -k 21 -k 22 -k 23 -k 24 -k 25 -k 26 -k 27 -k 28 -k 29 -k 30 -k 31 -k 32 -k 33 -k 34 -k 35 -k 36 -k 37 -k 38 -k 39 ;')
+    createico = mm.eval('curve -d 1 -p -0.276393 0.850651 -0.447214 -p 0.276393 0.850651 0.447214 -p -0.723607 0.525731 0.447214 -p -0.276393 0.850651 -0.447214 -p -0.894427 -7.81933e-08 -0.447214 -p -0.723607 0.525731 0.447214 -p -0.723607 -0.525731 0.447214 -p -0.894427 -7.81933e-08 -0.447214 -p -0.276393 -0.850651 -0.447214 -p -0.723607 -0.525731 0.447214 -p -0.723607 0.525731 0.447214 -p 0 0 1 -p -0.723607 -0.525731 0.447214 -p 0.276393 -0.850651 0.447214 -p 0 0 1 -p 0.276393 0.850651 0.447214 -p -0.276393 0.850651 -0.447214 -p 0.723607 0.525731 -0.447214 -p 0.276393 0.850651 0.447214 -p 0.894427 0 0.447214 -p 0 0 1 -p 0.276393 -0.850651 0.447214 -p 0.723607 -0.525731 -0.447214 -p 0.894427 0 0.447214 -p 0.723607 0.525731 -0.447214 -p 0 0 -1 -p 0.723607 -0.525731 -0.447214 -p -0.276393 -0.850651 -0.447214 -p -0.894427 -7.81933e-08 -0.447214 -p 0 0 -1 -p -0.276393 0.850651 -0.447214 -p 0 0 -1 -p -0.276393 -0.850651 -0.447214 -p 0.723607 -0.525731 -0.447214 -p 0.276393 -0.850651 0.447214 -p 0.894427 0 0.447214 -p 0.276393 -0.850651 0.447214 -p -0.276393 -0.850651 -0.447214 -p 0.723607 -0.525731 -0.447214 -p 0.723607 0.525731 -0.447214 -k 0 -k 1 -k 2 -k 3 -k 4 -k 5 -k 6 -k 7 -k 8 -k 9 -k 10 -k 11 -k 12 -k 13 -k 14 -k 15 -k 16 -k 17 -k 18 -k 19 -k 20 -k 21 -k 22 -k 23 -k 24 -k 25 -k 26 -k 27 -k 28 -k 29 -k 30 -k 31 -k 32 -k 33 -k 34 -k 35 -k 36 -k 37 -k 38 -k 39 ;')
     queries()
 
 #Creates Arrow Control
 def CreateArrow():
     createarrow = mm.eval('curve -d 1 -p 1 0 0 -p 1 0 -2 -p -1 0 -2 -p -1 0 0 -p -2 0 0 -p 0 0 2 -p 2 0 0 -p 1 0 0 -k 0 -k 1 -k 2 -k 3 -k 4 -k 5 -k 6 -k 7 ;')
+    queries()
+
+def FourSidedArrow():
+    foursidearrow = mm.eval('curve -d 1 -p -3.328165 0 -5.6069e-07 -p -2.120461 0 0.854148 -p -2.120455 0 0.469467' 
+                                   '-p -0.92388 0 0.469465 -p -0.707107 0 0.707107 -p -0.469465 0 0.92388 -p -0.469467 0 2.120455' 
+                                   '-p -0.854151 0 2.12046 -p -1.99269e-07 0 3.328166 -p 0.85415 0 2.120461 -p 0.469466 0 2.120455' 
+                                   '-p 0.469465 0 0.92388 -p 0.707107 0 0.707107 -p 0.92388 0 0.469465 -p 2.120455 0 0.469467 -p 2.12046 0 0.854151' 
+                                   '-p 3.328166 0 1.99269e-07 -p 2.120461 0 -0.85415 -p 2.120455 0 -0.469466 -p 0.92388 0 -0.469464 -p 0.707107 0 -0.707106' 
+                                   '-p 0.469466 0 -0.923879 -p 0.469467 0 -2.120455 -p 0.854151 0 -2.120461 -p 5.6069e-07 0 -3.328165 -p -0.854148 0 -2.120461' 
+                                   '-p -0.469467 0 -2.120455 -p -0.469465 0 -0.92388 -p -0.707106 0 -0.707107 -p -0.923879 0 -0.469466 -p -2.120455 0 -0.469467 -p -2.120461 0 -0.854151 -p -3.328165 0 -5.6069e-07' 
+                                   '-k 0 -k 1 -k 2 -k 3 -k 4 -k 5 -k 6 -k 7 -k 8 -k 9 -k 10 -k 11 -k 12 -k 13 -k 14 -k 15 -k 16 -k 17 -k 18 -k 19 -k 20 -k 21 -k 22 -k 23 -k 24 -k 25 -k 26 -k 27 -k 28 -k 29 -k 30 -k 31 -k 32 ;')
     queries()
 #Creates Square Control
 def CreateSquare():
@@ -98,6 +95,13 @@ def CreateCone():
                                      '-p -0.0270729 0.174247 -0.083322 -p 0.027073 0.174247 -0.083322 -p 0 -0.000972612 0 -p 0.027073 0.174247 -0.083322 -p 0.0708779 0.174247 -0.0514958 -p 0 -0.000972612 0' 
                                      '-p 0.0708779 0.174247 -0.0514958 -p 0.0876099 0.174247 5.22196e-09 -p 0 -0.000972612 0 -p 0.0876099 0.174247 5.22196e-09 -p 0.0708779 0.174247 0.0514958' 
                                      '-k 0 -k 1 -k 2 -k 3 -k 4 -k 5 -k 6 -k 7 -k 8 -k 9 -k 10 -k 11 -k 12 -k 13 -k 14 -k 15 -k 16 -k 17 -k 18 -k 19 -k 20 -k 21 -k 22 -k 23 -k 24 -k 25 -k 26 -k 27 -k 28 ;')
+    queries()
+
+def CreateCurvedArrow():
+    createcurvedarrow = mm.eval('curve -d 1 -p 0 0.0513688 0.707107 -p 0.707107 0.0513688 -0.0336316 -p 0.354072 0.0513688 -0.0336323 -p 0.366901 0.0513688 -0.307905 -p 0.343415 0.0513688 -0.671769'
+                                ' -p 0.260933 0.0513688 -1.098486 -p 0.0935965 0.0513688 -1.532706 -p -0.178931 0.0513688 -1.883852 -p -0.639616 0.0513688 -2.193043 -p -1.164146 0.0513688 -2.346003 -p -1.623407 0.0513688 -2.304124 -p -2.023016 0.0513688 -2.208558 -p -2.438616 0.0513688 -1.992421 -p -2.126793 0.0513688 -1.385754 -p -1.853617 0.0513688 -1.549847 -p -1.592405 0.0513688 -1.626137 -p -1.312204 0.0513688 -1.675447'
+                                '-p -1.000047 0.0513688 -1.606024 -p -0.776245 0.0513688 -1.405425 -p -0.570002 0.0513688 -1.124354 -p -0.430101 0.0513688 -0.862915 -p -0.367339 0.0513688 -0.576259 -p -0.356285 0.0513688 -0.283196 -p -0.354072 0.0513688 -0.0336323 -p -0.707107 0.0513688 -0.0336316 -p 0 0.0513688 0.707107 -k 0 -k 1 -k 2 -k 3 -k 4 -k 5 -k 6 -k 7' 
+                                '-k 8 -k 9 -k 10 -k 11 -k 12 -k 13 -k 14 -k 15 -k 16 -k 17 -k 18 -k 19 -k 20 -k 21 -k 22 -k 23 -k 24 -k 25 ;')
     queries()
     
 #Creates joints by input #
@@ -126,20 +130,21 @@ def brIGdgewindow():
     cmds.separator(style='none')
     control_data_frame(bwindow, main_layout)
     queries_arguements_frame(bwindow, main_layout)
+    color_settings_frame(bwindow, main_layout)
 
     #Shows window
     cmds.showWindow(bwindow)
 
 
-def joint_frame(main_layout):
-    jointframe = cmds.frameLayout(label='Joint Sequence', width=500, height=50, collapsable=True, parent=main_layout, 
-    collapseCommand= lambda: brigdge_collapse(window, frame_layout, height))
+def joint_frame(main_layout, bwindow, height=50):
+    jointframe = cmds.frameLayout(label='Joint Sequence', width=500, height=height, collapsable=True, parent=main_layout, 
+    collapseCommand= lambda: brigdge_collapse(bwindow, height))
     
     jcl = cmds.rowColumnLayout(numberOfColumns=1, columnWidth=[(1, 165)], rowSpacing=[(1, 2)], parent=jointframe)
     
     JointSequence = cmds.button( label='Create Joint Sequence', command= 'CreateJoints()', height= 25, width=495, parent=jcl)
     
-def control_data_frame(window, main_layout):
+def control_data_frame(bwindow, main_layout):
     dataframe = cmds.frameLayout(label='Control Creation', width=500, height=230,
                                  collapsable=True, parent=main_layout)
     rcl = cmds.rowColumnLayout(numberOfColumns=3, columnWidth=[(1, 165), (2, 165), (3, 165)],
@@ -156,8 +161,10 @@ def control_data_frame(window, main_layout):
     SquareControl = cmds.button (l = 'Create Square Control', command = 'CreateSquare()', height= 30, width=10, parent=rcl)  
     
     ConeControl = cmds.button (l = 'Create Cone Control', command = 'CreateCone()', height= 30, width=10, parent=rcl) 
+    ArrowCrossControl = cmds.button(l = 'Arrow Cross Control', command = 'FourSidedArrow()', height= 30, width=10, parent=rcl)
+    CurvedArrowControl = cmds.button(l = 'Curved Arrow Control', command= 'CreateCurvedArrow()', height= 30, width=10, parent=rcl)
     
-def queries_arguements_frame(window, main_layout):
+def queries_arguements_frame(bwindow, main_layout):
     argframe = cmds.frameLayout(label='Queries', width=500, height=130,
                                  collapsable=True, parent=main_layout)
     qrcl = cmds.rowColumnLayout(numberOfColumns=1, columnWidth=[(1, 135)], 
@@ -170,10 +177,16 @@ def queries_arguements_frame(window, main_layout):
     FKIKSwitch = cmds.checkBox('fkikswitch', label = 'FK IK Switch', v = False)
 
 
-def brigdge_collapse(window, frame_layout, height):
-    window_height = cmds.window(window, query=True, height=True)
+# Creates colors for controls
+def color_settings_frame(bwindow, main_layout):
+    colorframe = cmds.frameLayout(label='Color Settings', width=500, height=90,
+                                 collapsable=True, parent=main_layout)
+
+
+def brigdge_collapse(bwindow, frame_layout, height):
+    window_height = cmds.window(bwindow, query=True, height=True)
     frame_height = cmds.frameLayout(frame_layout, query=True, height=True)
-    cmds.window(window, edit=True, height=window_height - height + 30)
+    cmds.window(bwindow, edit=True, height=window_height - height + 30)
     cmds.frameLayout(frame_layout, edit=True, height=frame_height - height + 30)
 
 def brigdge_expand(window, frame_layout, height):
@@ -181,4 +194,3 @@ def brigdge_expand(window, frame_layout, height):
     frame_height = cmds.frameLayout(frame_layout, query=True, height=True)
     cmds.window(window, edit=True, height=window_height + height - 30)
     cmds.frameLayout(frame_layout, edit=True, height=frame_height + height - 30)
-
